@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090817">
+  <meta name="color-scheme" content="dark">
+  <title>TrendzBetaGames | Gaming News, Reviews, Walkthroughs & Trending Games</title>
+  <meta name="description" content="Explore TrendzBetaGames for gaming news, game reviews, gameplay walkthroughs, trending releases and updates across Android, iOS, PC, PlayStation and Xbox.">
+  <meta name="keywords" content="TrendzBetaGames, gaming news, video game reviews, gameplay walkthroughs, trending games, mobile gaming, Android games, iOS games, PC gaming, PlayStation, Xbox">
+  <meta name="author" content="TrendzBetaGames">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TrendzBetaGames | Discover What's Next in Gaming">
+  <meta property="og:description" content="Gaming news, reviews, walkthroughs and trending games across mobile, PC and consoles.">
+  <meta property="og:site_name" content="TrendzBetaGames">
+  <meta property="og:url" content="https://www.trendzbetagames.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="TrendzBetaGames | Discover What's Next in Gaming">
+  <meta name="twitter:description" content="Gaming news, reviews, walkthroughs and trending games across mobile, PC and consoles.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%235d17eb'/%3E%3Cpath d='M20 35h60v12H58v38H42V47H20z' fill='white'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #090817;
+      --panel: rgba(20, 17, 42, .78);
+      --panel-strong: #15112b;
+      --text: #f7f5ff;
+      --muted: #b7b1d0;
+      --purple: #8b5cf6;
+      --purple-strong: #5d17eb;
+      --cyan: #42e8ff;
+      --line: rgba(184, 160, 255, .18);
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); background:
+        radial-gradient(ellipse at 12% 8%, rgba(93,23,235,.24), transparent 36rem),
+        radial-gradient(ellipse at 92% 32%, rgba(27,180,220,.12), transparent 32rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65; overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
+    .grid-bg {
+      position: fixed; inset: 0; pointer-events: none; z-index: -1; opacity: .15;
+      background-image: linear-gradient(rgba(154,127,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(154,127,255,.14) 1px, transparent 1px);
+      background-size: 54px 54px; mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+    .orb { position: fixed; width: 300px; height: 300px; border-radius: 50%; filter: blur(90px); opacity: .15; pointer-events:none; z-index:-1; animation: drift 13s ease-in-out infinite alternate; }
+    .orb.one { background: #6b2dff; top: 20%; left: -180px; }
+    .orb.two { background: #00c8e8; right: -200px; top: 58%; animation-delay: -5s; }
+    @keyframes drift { to { transform: translate(55px, -35px) scale(1.18); } }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(139,92,246,.35); } 50% { box-shadow: 0 0 0 12px rgba(139,92,246,0); } }
+    @keyframes rise { from { opacity:0; transform: translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(18px); background: rgba(9,8,23,.78); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:-.04em; font-size:1.12rem; }
+    .brand-mark { width:42px; height:42px; display:grid; place-items:center; border-radius:13px; background:linear-gradient(145deg,#8d5cff,#4a0fce); box-shadow:0 8px 28px rgba(93,23,235,.4); font-size:1.35rem; }
+    .brand span:last-child { color:#fff; }
+    .brand em { color:#a78bfa; font-style:normal; }
+    .nav-links { display:flex; align-items:center; gap:25px; color:var(--muted); font-size:.92rem; }
+    .nav-links a:hover { color:#fff; }
+    .nav-cta, .button { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:12px 19px; border-radius:12px; font-weight:800; border:1px solid transparent; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .nav-cta, .button.primary { background:linear-gradient(110deg,#7029ee,#5d17eb 55%,#8b5cf6); box-shadow:0 8px 28px rgba(93,23,235,.3); color:#fff; }
+    .nav-cta:hover, .button:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(93,23,235,.38); }
+    .menu-btn { display:none; background:transparent; color:#fff; border:1px solid var(--line); border-radius:10px; padding:9px 12px; font-size:1.2rem; }
+    .hero { padding:104px 0 78px; position:relative; }
+    .hero-layout { display:grid; grid-template-columns:1.12fr .88fr; align-items:center; gap:56px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; border:1px solid rgba(167,139,250,.32); background:rgba(93,23,235,.12); color:#d8caff; border-radius:999px; padding:7px 13px; font-size:.78rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+    .live-dot { width:8px; height:8px; border-radius:50%; background:#50f3bd; box-shadow:0 0 12px #50f3bd; }
+    h1 { font-size:clamp(2.8rem,6.4vw,5.6rem); line-height:1.02; letter-spacing:-.065em; margin:23px 0 22px; max-width:780px; }
+    .gradient-text { background:linear-gradient(100deg,#fff 10%,#bda4ff 52%,#55e8ff 100%); color:transparent; background-clip:text; -webkit-background-clip:text; }
+    .hero-copy { color:var(--muted); font-size:clamp(1rem,1.6vw,1.18rem); max-width:650px; margin:0 0 30px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:13px; }
+    .button.secondary { border-color:var(--line); background:rgba(255,255,255,.035); color:#eee9ff; }
+    .hero-note { margin-top:22px; color:#8f89aa; font-size:.84rem; }
+    .hero-art { min-height:390px; position:relative; display:grid; place-items:center; }
+    .game-card { width:min(100%,420px); aspect-ratio:1.02; border:1px solid rgba(196,177,255,.28); border-radius:30px; background:linear-gradient(145deg,rgba(36,27,76,.94),rgba(13,12,34,.9)); box-shadow:0 30px 100px rgba(0,0,0,.42), inset 0 1px rgba(255,255,255,.1); position:relative; overflow:hidden; transform:rotate(2deg); animation:rise .9s both; }
+    .game-card:before { content:""; position:absolute; inset:-30%; background:conic-gradient(from 30deg,transparent 0 55%,rgba(116,72,255,.25),transparent 72%); animation:spin 18s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .card-inner { position:absolute; inset:1px; border-radius:29px; background:radial-gradient(circle at 50% 42%,rgba(107,61,224,.25),transparent 45%),linear-gradient(145deg,#171333,#0d0c20); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:28px; }
+    .controller { font-size:clamp(5rem,11vw,8.2rem); line-height:1; filter:drop-shadow(0 12px 24px rgba(139,92,246,.5)); transform:rotate(-9deg); }
+    .card-word { margin-top:25px; font-size:1.35rem; font-weight:950; letter-spacing:.14em; }
+    .card-sub { color:#aaa1ce; font-size:.77rem; letter-spacing:.2em; margin-top:3px; }
+    .floating-tag { position:absolute; padding:10px 14px; border:1px solid var(--line); background:rgba(19,15,42,.88); border-radius:12px; box-shadow:0 12px 35px rgba(0,0,0,.28); color:#e6deff; font-size:.82rem; font-weight:800; backdrop-filter:blur(10px); }
+    .tag-a { top:13%; left:-4%; animation:float 5s ease-in-out infinite; }
+    .tag-b { right:-4%; top:28%; animation:float 6s ease-in-out infinite reverse; }
+    .tag-c { bottom:10%; left:2%; animation:float 5.5s ease-in-out infinite; }
+    @keyframes float { 50% { transform:translateY(-12px); } }
+    .platform-strip { border-block:1px solid var(--line); background:rgba(255,255,255,.018); padding:22px 0; }
+    .platforms { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; color:#c5bedc; font-size:.88rem; font-weight:750; }
+    .platforms span { display:flex; align-items:center; gap:9px; }
+    .platforms b { color:#8b5cf6; font-size:1.1rem; }
+    section.content-section { padding:88px 0; }
+    .section-head { max-width:700px; margin:0 auto 42px; text-align:center; }
+    .kicker { color:#a78bfa; font-size:.78rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+    h2 { font-size:clamp(2rem,4vw,3.25rem); line-height:1.12; letter-spacing:-.045em; margin:12px 0 14px; }
+    .section-head p, .about-copy { color:var(--muted); margin:0; }
+    .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .feature { border:1px solid var(--line); border-radius:20px; padding:25px; background:linear-gradient(145deg,rgba(30,24,60,.78),rgba(15,13,34,.78)); transition:transform .25s ease,border-color .25s ease; }
+    .feature:hover { transform:translateY(-7px); border-color:rgba(167,139,250,.55); }
+    .feature-icon { width:48px; height:48px; border-radius:14px; display:grid; place-items:center; background:rgba(116,72,255,.16); color:#c5adff; font-size:1.5rem; margin-bottom:19px; }
+    .feature h3 { margin:0 0 8px; font-size:1.12rem; }
+    .feature p { color:var(--muted); margin:0; font-size:.94rem; }
+    .about-panel { display:grid; grid-template-columns:.8fr 1.2fr; gap:38px; align-items:center; padding:38px; border:1px solid var(--line); border-radius:26px; background:linear-gradient(120deg,rgba(93,23,235,.13),rgba(255,255,255,.025)); }
+    .about-visual { min-height:220px; display:grid; place-items:center; border-radius:20px; background:radial-gradient(circle,rgba(139,92,246,.22),transparent 65%),#100d25; border:1px solid var(--line); font-size:5rem; }
+    .about-copy p { margin:0 0 15px; }
+    .about-copy strong { color:#f3edff; }
+    .social-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .social-link { display:flex; align-items:center; gap:14px; padding:17px 18px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.025); transition:.2s ease; }
+    .social-link:hover { transform:translateY(-4px); background:rgba(93,23,235,.13); border-color:rgba(167,139,250,.5); }
+    .social-icon { width:42px; height:42px; border-radius:12px; display:grid; place-items:center; background:rgba(139,92,246,.16); color:#c9b6ff; flex:0 0 auto; }
+    .social-icon svg { width:21px; height:21px; fill:currentColor; }
+    .social-link strong { display:block; font-size:.95rem; }
+    .social-link small { color:#9d96b8; font-size:.78rem; }
+    .cta { text-align:center; padding:56px 24px; border:1px solid rgba(167,139,250,.28); border-radius:26px; background:radial-gradient(ellipse at 50% 0%,rgba(93,23,235,.28),transparent 70%),#120f29; }
+    .cta p { color:var(--muted); max-width:620px; margin:0 auto 24px; }
+    footer { border-top:1px solid var(--line); padding:28px 0; color:#9992b4; font-size:.84rem; }
+    .footer-inner { display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; align-items:center; }
+    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
+    .footer-links a:hover { color:#fff; }
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .7s ease,transform .7s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+      .reveal { opacity:1; transform:none; }
+    }
+    @media (max-width:850px) {
+      .hero { padding:76px 0 60px; }
+      .hero-layout { grid-template-columns:1fr; gap:26px; }
+      .hero-art { min-height:350px; }
+      .game-card { width:min(78vw,380px); }
+      .tag-a { left:4%; } .tag-b { right:3%; }
+      .feature-grid { grid-template-columns:repeat(2,1fr); }
+      .about-panel { grid-template-columns:1fr; }
+      .about-visual { min-height:170px; }
+    }
+    @media (max-width:640px) {
+      .wrap { width:min(var(--max),calc(100% - 30px)); }
+      .nav { min-height:68px; }
+      .menu-btn { display:block; }
+      .nav-cta { display:none; }
+      .nav-links { display:none; position:absolute; top:68px; left:0; right:0; padding:18px 22px 22px; background:rgba(11,9,27,.98); border-bottom:1px solid var(--line); flex-direction:column; align-items:stretch; gap:0; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 4px; }
+      .hero { padding:65px 0 48px; }
+      h1 { font-size:clamp(2.65rem,13vw,4.2rem); }
+      .hero-actions .button { width:100%; }
+      .hero-art { min-height:310px; }
+      .game-card { width:min(78vw,330px); }
+      .floating-tag { font-size:.72rem; padding:8px 10px; }
+      .platforms { justify-content:center; gap:14px 22px; }
+      section.content-section { padding:65px 0; }
+      .feature-grid, .social-grid { grid-template-columns:1fr; }
+      .feature { padding:22px; }
+      .about-panel { padding:22px; }
+      .footer-inner { justify-content:center; text-align:center; }
+      .footer-links { justify-content:center; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TrendzBetaGames",
+    "url": "https://www.trendzbetagames.com/",
+    "description": "Gaming news, game reviews, gameplay walkthroughs, trending releases and updates across Android, iOS, PC, PlayStation and Xbox.",
+    "sameAs": [
+      "https://www.youtube.com/@Trendzbetagames",
+      "https://www.facebook.com/TrendzBetaGames",
+      "https://www.instagram.com/trendzbetagames/",
+      "https://t.me/trendzbetagames",
+      "https://x.com/TrendzBetaGames"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div><div class="orb one" aria-hidden="true"></div><div class="orb two" aria-hidden="true"></div>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="TrendzBetaGames home"><span class="brand-mark" aria-hidden="true">T</span><span>Trendz<em>Beta</em>Games</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#coverage">What We Cover</a><a href="#community">Community</a>
+      </div>
+      <a class="nav-cta" href="https://www.trendzbetagames.com/" target="_blank" rel="noopener noreferrer">Visit Website <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-layout wrap">
+        <div>
+          <div class="eyebrow"><span class="live-dot"></span> Your next gaming destination</div>
+          <h1>Discover what's <span class="gradient-text">next in gaming.</span></h1>
+          <p class="hero-copy">From trending new releases to in-depth walkthroughs, TrendzBetaGames brings you closer to the games you love. Explore gaming news, reviews, updates and gameplay across mobile, PC and console.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://www.trendzbetagames.com/" target="_blank" rel="noopener noreferrer">Explore Gaming News <span aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="https://www.youtube.com/@Trendzbetagames" target="_blank" rel="noopener noreferrer">▶ Watch Gameplay</a>
+          </div>
+          <p class="hero-note">Gaming stories, fresh discoveries and gameplay — all in one place.</p>
+        </div>
+        <div class="hero-art" aria-label="Gaming-themed illustration">
+          <div class="floating-tag tag-a">✦ TRENDING GAMES</div>
+          <div class="floating-tag tag-b">⚡ GAME UPDATES</div>
+          <div class="floating-tag tag-c">🎮 NO-COMMENTARY GAMEPLAY</div>
+          <div class="game-card"><div class="card-inner"><div class="controller" aria-hidden="true">🎮</div><div class="card-word">PLAY. EXPLORE. REPEAT.</div><div class="card-sub">WELCOME TO TRENDZBETAGAMES</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="platform-strip">
+      <div class="platforms wrap" aria-label="Platforms covered">
+        <span><b>▣</b> Android</span><span><b>◉</b> iOS</span><span><b>⌘</b> PC Gaming</span><span><b>▰</b> PlayStation</span><span><b>◆</b> Xbox</span>
+      </div>
+    </div>
+
+    <section class="content-section" id="coverage">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">Inside TrendzBetaGames</div><h2>Everything gaming. <span class="gradient-text">One destination.</span></h2><p>Discover new worlds, keep up with the latest updates and find your next favourite game.</p></div>
+        <div class="feature-grid">
+          <article class="feature reveal"><div class="feature-icon" aria-hidden="true">📰</div><h3>Gaming News & Updates</h3><p>Stay informed about announcements, new releases, major updates, beta tests and what's happening across gaming.</p></article>
+          <article class="feature reveal"><div class="feature-icon" aria-hidden="true">⭐</div><h3>Game Reviews & Discoveries</h3><p>Explore interesting games, first looks and noteworthy releases across mobile, PC and console platforms.</p></article>
+          <article class="feature reveal"><div class="feature-icon" aria-hidden="true">🎮</div><h3>Gameplay Walkthroughs</h3><p>Follow gameplay journeys, missions, story moments and complete playthroughs on our video channel.</p></article>
+          <article class="feature reveal"><div class="feature-icon" aria-hidden="true">📱</div><h3>Mobile Gaming</h3><p>Find Android and iOS games, new mobile releases, updates and gameplay worth checking out.</p></article>
+          <article class="feature reveal"><div class="feature-icon" aria-hidden="true">🖥️</div><h3>PC & Console Gaming</h3><p>Discover gaming coverage for PC, PlayStation and Xbox, from exciting launches to notable updates.</p></article>
+          <article class="feature reveal"><div class="feature-icon" aria-hidden="true">🚀</div><h3>Trending & Upcoming Games</h3><p>Keep an eye on games gaining attention, upcoming launches, early access titles and fresh experiences.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="about">
+      <div class="wrap">
+        <div class="about-panel reveal">
+          <div class="about-visual" aria-hidden="true">👾</div>
+          <div class="about-copy"><div class="kicker">Who we are</div><h2>Built for players who love to <span class="gradient-text">discover more.</span></h2>
+            <p><strong>TrendzBetaGames</strong> is an independent gaming-focused digital brand covering video game news, reviews, gameplay walkthroughs, trending releases and updates.</p>
+            <p>Our goal is simple: help gamers discover interesting titles and stay up to date with what's happening across Android, iOS, PC, PlayStation and Xbox.</p>
+            <p>Whether you're looking for your next mobile game, following a major release or watching a full gameplay walkthrough, start exploring with TrendzBetaGames.</p>
+            <a class="button primary" href="https://www.trendzbetagames.com/" target="_blank" rel="noopener noreferrer">Visit TrendzBetaGames ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="community">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">Join the community</div><h2>Stay connected. <span class="gradient-text">Stay in the game.</span></h2><p>Follow TrendzBetaGames on your favourite platforms for new videos, gaming updates and more.</p></div>
+        <div class="social-grid">
+          <a class="social-link reveal" href="https://www.youtube.com/@Trendzbetagames" target="_blank" rel="noopener noreferrer" aria-label="TrendzBetaGames on YouTube"><span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></span><span><strong>YouTube</strong><small>Gameplay & walkthroughs</small></span></a>
+          <a class="social-link reveal" href="https://www.facebook.com/TrendzBetaGames" target="_blank" rel="noopener noreferrer" aria-label="TrendzBetaGames on Facebook"><span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2v-2c0-.9.3-1.5 1.6-1.5h1.7V3.2c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2H7v3.2h2.8V21h3.7Z"/></svg></span><span><strong>Facebook</strong><small>News & community posts</small></span></a>
+          <a class="social-link reveal" href="https://www.instagram.com/trendzbetagames/" target="_blank" rel="noopener noreferrer" aria-label="TrendzBetaGames on Instagram"><span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm5 3.1a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2.2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm5.1-3.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></span><span><strong>Instagram</strong><small>Gaming highlights</small></span></a>
+          <a class="social-link reveal" href="https://t.me/trendzbetagames" target="_blank" rel="noopener noreferrer" aria-label="TrendzBetaGames on Telegram"><span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.8 4.6-3.3 15.6c-.2 1.1-.8 1.4-1.7.9l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.9 8.9-8c.4-.4-.1-.6-.6-.2L6.4 14.3l-4.7-1.5c-1-.3-1-1 .2-1.5L20.3 4c.9-.3 1.7.2 1.5.6Z"/></svg></span><span><strong>Telegram</strong><small>Updates & announcements</small></span></a>
+          <a class="social-link reveal" href="https://x.com/TrendzBetaGames" target="_blank" rel="noopener noreferrer" aria-label="TrendzBetaGames on X"><span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 13.8 4.8 22H1.6l7.3-8.4L.8 2h6.5l4.4 7.5L18.9 2Zm-1.1 17.9h1.7L6.3 4H4.5l13.3 15.9Z"/></svg></span><span><strong>X (Twitter)</strong><small>Quick gaming updates</small></span></a>
+          <a class="social-link reveal" href="https://www.trendzbetagames.com/" target="_blank" rel="noopener noreferrer" aria-label="TrendzBetaGames official website"><span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 9h-3.1a15.6 15.6 0 0 0-1.3-5 8 8 0 0 1 4.4 5ZM12 4.1c.9 1.2 1.6 3.8 1.8 6.9h-3.6c.2-3.1.9-5.7 1.8-6.9ZM4.1 13h3.1a15.6 15.6 0 0 0 1.3 5 8 8 0 0 1-4.4-5Zm3.1-2H4.1a8 8 0 0 1 4.4-5 15.6 15.6 0 0 0-1.3 5Zm4.8 8.9c-.9-1.2-1.6-3.8-1.8-6.9h3.6c-.2 3.1-.9 5.7-1.8 6.9Zm2.5-1.9a15.6 15.6 0 0 0 1.3-5h3.1a8 8 0 0 1-4.4 5Z"/></svg></span><span><strong>Official Website</strong><small>Gaming articles & guides</small></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="wrap"><div class="cta reveal"><div class="kicker">Ready to explore?</div><h2>Your next gaming discovery starts here.</h2><p>Visit the website for the latest articles, or head to YouTube for gameplay videos and walkthroughs.</p><div class="hero-actions" style="justify-content:center"><a class="button primary" href="https://www.trendzbetagames.com/" target="_blank" rel="noopener noreferrer">Explore the Website ↗</a><a class="button secondary" href="https://www.youtube.com/@Trendzbetagames" target="_blank" rel="noopener noreferrer">Subscribe on YouTube ↗</a></div></div></div>
+    </section>
+  </main>
+
+  <footer><div class="footer-inner wrap"><span>© <span id="year"></span> TrendzBetaGames. All rights reserved.</span><div class="footer-links"><a href="https://www.trendzbetagames.com/">Official Website</a><a href="https://www.youtube.com/@Trendzbetagames">YouTube</a><a href="#home">Back to top ↑</a></div></div></footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      menuBtn.textContent = isOpen ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open navigation menu');
+      menuBtn.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
